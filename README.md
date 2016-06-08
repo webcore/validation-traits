@@ -1,5 +1,6 @@
 # Validation traits
 
+[![Travis](https://img.shields.io/travis/webcore/validation-traits.svg?maxAge=2592000)]()
 [![license](https://img.shields.io/github/license/webcore/validation-traits.svg?maxAge=2592000)]()
 
 ### Example
