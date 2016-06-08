@@ -1,31 +1,3 @@
-# Validation traits
-
-[![license](https://img.shields.io/github/license/webcore/validation-traits.svg?maxAge=2592000)]()
-
-### Example
-
-Let's define simple token class with 3 rules:
-
-```php
-<?php
-
-use Webcore\Validation\ValidationTrait;
-use Webcore\Validation\ValidationValueBoxTrait;
-
-class Token
-{
-    use ValidationTrait, ValidationValueBoxTrait;
-
-    protected function validation($value)
-    {
-        $this->validateNotEmpty($value);
-        $this->validateBase64($value);
-        $this->validateLength($value, 64);
-    }
-}
-```
-
-```php
 <?php
 
 require_once __DIR__."/../vendor/autoload.php";
@@ -57,13 +29,3 @@ try {
 } catch (InvalidArgumentException $e) {
     echo $e->getMessage(); //Token must be valid base_64
 }
-
-```
-
-### TODO
-
-- divide into single traits for each validation
-
-### MIT license
-
-Copyright (c) 2016, Štefan Peťovský

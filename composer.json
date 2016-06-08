@@ -1,0 +1,23 @@
+{
+    "name": "webcore/validation-traits",
+    "description": "Simple validation library",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Štefan Peťovský",
+            "email": "stefan.petovsky@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^5.4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Webcore\\Validation\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": { "Webcore\\Validation\\Tests\\": "tests/" }
+    }
+}
