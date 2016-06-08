@@ -17,10 +17,17 @@ trait ValidationValueBoxTrait
         $this->value = $value;
     }
 
+    /**
+     * @return mixed
+     */
     public function getValue()
     {
         return $this->value;
     }
 
+    /**
+     * @param $value
+     * @return void
+     */
     abstract protected function validation($value);
 }
