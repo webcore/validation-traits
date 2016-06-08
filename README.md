@@ -1,9 +1,11 @@
 # Validation traits
 
-[![Travis](https://img.shields.io/travis/webcore/validation-traits.svg?maxAge=2592000)]()
-[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/6a166fab-ddf0-4d5c-b605-09f6681f8795.svg?maxAge=2592000)]()
-[![VersionEye](https://img.shields.io/versioneye/d/webcore/validation-traits.svg?maxAge=2592000)]()
-[![license](https://img.shields.io/github/license/webcore/validation-traits.svg?maxAge=2592000)]()
+[![Travis](https://img.shields.io/travis/webcore/validation-traits.svg?maxAge=2592000)](https://travis-ci.org/webcore/validation-traits)
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/6a166fab-ddf0-4d5c-b605-09f6681f8795.svg?maxAge=2592000)](https://insight.sensiolabs.com/projects/6a166fab-ddf0-4d5c-b605-09f6681f8795)
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/webcore/validation-traits.svg?maxAge=2592000)](https://scrutinizer-ci.com/g/webcore/validation-traits/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/webcore/validation-traits/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/webcore/validation-traits/?branch=master)
+[![Dependency Status](https://www.versioneye.com/user/projects/575827ac7757a0004a1de479/badge.svg?style=plastic)](https://www.versioneye.com/user/projects/575827ac7757a0004a1de479)
+[![license](https://img.shields.io/github/license/webcore/validation-traits.svg?maxAge=2592000)](https://opensource.org/licenses/MIT)
 
 ### Example
 
