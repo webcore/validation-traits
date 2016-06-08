@@ -1,6 +1,7 @@
 # Validation traits
 
 [![Travis](https://img.shields.io/travis/webcore/validation-traits.svg?maxAge=2592000)]()
+[![SensioLabs Insight](https://img.shields.io/sensiolabs/i/6a166fab-ddf0-4d5c-b605-09f6681f8795.svg?maxAge=2592000)]()
 [![license](https://img.shields.io/github/license/webcore/validation-traits.svg?maxAge=2592000)]()
 
 ### Example
