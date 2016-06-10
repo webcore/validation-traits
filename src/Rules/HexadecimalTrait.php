@@ -21,7 +21,7 @@ trait HexadecimalTrait
             $value,
             FILTER_VALIDATE_REGEXP,
             array(
-                "options" => array("regexp" => '`^[0-9A-Fa-f]+$`')
+                "options" => array("regexp" => '`^[0-9A-Fa-f]+$`'),
             )
         );
         if ($isValid === false) {

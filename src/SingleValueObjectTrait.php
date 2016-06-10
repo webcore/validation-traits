@@ -31,17 +31,18 @@ trait SingleValueObjectTrait
     /**
      * Compare two SingleValueObject and tells whether they can be considered equal
      *
-     * @param  SingleValueObjectInterface $object
+     * @param SingleValueObjectInterface $object
      * @return bool
      */
     public function sameValueAs(SingleValueObjectInterface $object)
     {
         $areSame = ($this->value === $object->getValue());
+
         return $areSame;
     }
 
     /**
-     * @param $string
+     * @param string $string
      * @throws InvalidArgumentException
      */
     protected function throwInvalidArgumentMustBe($string)
@@ -50,8 +51,8 @@ trait SingleValueObjectTrait
     }
 
     /**
-     * @param $value
-     * @return void
+     * @param mixed $value
+     * @return null
      */
     abstract protected function validation($value);
 }

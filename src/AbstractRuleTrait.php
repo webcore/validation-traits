@@ -12,8 +12,9 @@ use InvalidArgumentException;
 trait AbstractRuleTrait
 {
     /**
-     * @param $string
+     * @param string $string
      * @throws InvalidArgumentException
+     * @return null
      */
     abstract protected function throwInvalidArgumentMustBe($string);
 }
