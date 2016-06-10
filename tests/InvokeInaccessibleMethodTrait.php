@@ -4,19 +4,10 @@
 namespace Webcore\Validation\Tests;
 
 
-use PHPUnit_Framework_TestCase;
 use ReflectionClass;
-use Webcore\Validation\ValidationTrait;
 
-abstract class ValidationBaseTest extends PHPUnit_Framework_TestCase
+trait InvokeInaccessibleMethodTrait
 {
-    protected $traitObject;
-
-    public function setUp()
-    {
-        $this->traitObject = $this->getObjectForTrait(ValidationTrait::class);
-    }
-
     /**
      * Call protected/private method of a class.
      *

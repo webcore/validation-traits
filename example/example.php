@@ -1,31 +1,49 @@
 <?php
 
+use Tester\Assert;
+
 require_once __DIR__."/../vendor/autoload.php";
 require_once __DIR__."/Token.php";
 
 //valid value
-$value = str_repeat('1234wxyz', 8);
-$token = new Token($value);
-echo $token->getValue(); // 1234wxyz1234wxyz1234wxyz1234wxyz1234wxyz1234wxyz1234wxyz1234wxyz
+$value = str_repeat('BeerNowThere0sATemporarySolution', 2);
+$tokenFoo = new Token($value);
+Assert::same("BeerNowThere0sATemporarySolutionBeerNowThere0sATemporarySolution", $tokenFoo->getValue());
+
+//compare with another object of same value
+$tokenBar = new Token("BeerNowThere0sATemporarySolutionBeerNowThere0sATemporarySolution");
+$areSame = $tokenBar->sameValueAs($tokenFoo);
+Assert::true($areSame);
+
+//compare with another object of different value
+$value = str_repeat('CraftBeerLovers0', 4); //
+$tokenPub = new Token($value);
+Assert::same("CraftBeerLovers0CraftBeerLovers0CraftBeerLovers0CraftBeerLovers0", $tokenPub->getValue());
+$areSame = $tokenPub->sameValueAs($tokenBar);
+Assert::false($areSame);
 
 //invalid values
-try {
-    $value = null;
-    $token = new Token($value);
-} catch (InvalidArgumentException $e) {
-    echo $e->getMessage(); //Token must be not empty
-}
+Assert::exception(
+    function () {
+        new Token(null);
+    },
+    InvalidArgumentException::class,
+    "Token must be not empty"
+);
 
-try {
-    $value = "InvalidTokenLength123456789";
-    $token = new Token($value);
-} catch (InvalidArgumentException $e) {
-    echo $e->getMessage(); //Token must be 64 characters long
-}
+Assert::exception(
+    function () {
+        new Token("InvalidTokenLength123456789");
+    },
+    InvalidArgumentException::class,
+    "Token must be 64 characters long"
+);
 
-try {
-    $value = str_repeat('?!@#$%^&', 8);;
-    $token = new Token($value);
-} catch (InvalidArgumentException $e) {
-    echo $e->getMessage(); //Token must be valid base_64
-}
+Assert::exception(
+    function () {
+        $value = str_repeat('?!@#$%^&', 8);
+        new Token($value);
+    },
+    InvalidArgumentException::class,
+    "Token must be valid base_64"
+);

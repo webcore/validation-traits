@@ -6,10 +6,8 @@ namespace Webcore\Validation\Tests;
 
 use InvalidArgumentException;
 
-abstract class ValidationTraitBaseTest extends ValidationBaseTest
+abstract class SingleParamsTraitTest extends RulesBaseTest
 {
-    abstract protected function getTestMethodName();
-
     /**
      * @dataProvider provideInvalidValues
      * @param $value
@@ -28,8 +26,4 @@ abstract class ValidationTraitBaseTest extends ValidationBaseTest
     {
         $this->invokeMethod($this->traitObject, $this->getTestMethodName(), [$value]);
     }
-
-    abstract public function provideInvalidValues();
-
-    abstract public function provideValidValues();
 }

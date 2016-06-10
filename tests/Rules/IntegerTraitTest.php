@@ -1,10 +1,16 @@
 <?php
-namespace Webcore\Validation\Tests\Validation;
+namespace Webcore\Validation\Tests\Rules;
 
-use Webcore\Validation\Tests\ValidationTraitBaseTest;
+use Webcore\Validation\Rules\IntegerTrait;
+use Webcore\Validation\Tests\SingleParamsTraitTest;
 
-class ValidationIntegerTest extends ValidationTraitBaseTest
+class IntegerTraitTest extends SingleParamsTraitTest
 {
+    protected function getTestTraitName()
+    {
+        return IntegerTrait::class;
+    }
+
     protected function getTestMethodName()
     {
         return "validateInteger";

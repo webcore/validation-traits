@@ -1,10 +1,16 @@
 <?php
-namespace Webcore\Validation\Tests\Validation;
+namespace Webcore\Validation\Tests\Rules;
 
-use Webcore\Validation\Tests\ValidationTraitBaseTest;
+use Webcore\Validation\Rules\BoolTrait;
+use Webcore\Validation\Tests\SingleParamsTraitTest;
 
-class ValidationBoolTest extends ValidationTraitBaseTest
+class BoolTraitTest extends SingleParamsTraitTest
 {
+    protected function getTestTraitName()
+    {
+        return BoolTrait::class;
+    }
+
     protected function getTestMethodName()
     {
         return "validateBool";

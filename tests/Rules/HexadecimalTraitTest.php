@@ -1,10 +1,16 @@
 <?php
-namespace Webcore\Validation\Tests\Validation;
+namespace Webcore\Validation\Tests\Rules;
 
-use Webcore\Validation\Tests\ValidationTraitBaseTest;
+use Webcore\Validation\Rules\HexadecimalTrait;
+use Webcore\Validation\Tests\SingleParamsTraitTest;
 
-class ValidationHexadecimalTest extends ValidationTraitBaseTest
+class HexadecimalTraitTest extends SingleParamsTraitTest
 {
+    protected function getTestTraitName()
+    {
+        return HexadecimalTrait::class;
+    }
+
     protected function getTestMethodName()
     {
         return "validateHexadecimal";

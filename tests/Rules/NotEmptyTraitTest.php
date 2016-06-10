@@ -1,10 +1,16 @@
 <?php
-namespace Webcore\Validation\Tests\Validation;
+namespace Webcore\Validation\Tests\Rules;
 
-use Webcore\Validation\Tests\ValidationTraitBaseTest;
+use Webcore\Validation\Rules\NotEmptyTrait;
+use Webcore\Validation\Tests\SingleParamsTraitTest;
 
-class ValidationEmptyTest extends ValidationTraitBaseTest
+class NotEmptyTraitTest extends SingleParamsTraitTest
 {
+    protected function getTestTraitName()
+    {
+        return NotEmptyTrait::class;
+    }
+
     protected function getTestMethodName()
     {
         return "validateNotEmpty";

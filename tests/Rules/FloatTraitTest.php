@@ -1,10 +1,16 @@
 <?php
-namespace Webcore\Validation\Tests\Validation;
+namespace Webcore\Validation\Tests\Rules;
 
-use Webcore\Validation\Tests\ValidationTraitBaseTest;
+use Webcore\Validation\Rules\FloatTrait;
+use Webcore\Validation\Tests\SingleParamsTraitTest;
 
-class ValidationFloatTest extends ValidationTraitBaseTest
+class FloatTraitTest extends SingleParamsTraitTest
 {
+    protected function getTestTraitName()
+    {
+        return FloatTrait::class;
+    }
+
     protected function getTestMethodName()
     {
         return "validateFloat";
