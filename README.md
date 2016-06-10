@@ -111,14 +111,6 @@ Assert::exception(
 );
 ```
 
-### TODO
-
-- add length range validation string
-
-## Other Notes
-
-No guarantee is made about the sources, use at your own risk.
-
 ### MIT license
 
 Copyright (c) 2016, Štefan Peťovský
