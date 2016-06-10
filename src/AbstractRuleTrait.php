@@ -7,13 +7,11 @@
 namespace Webcore\Validation;
 
 
-use InvalidArgumentException;
-
 trait AbstractRuleTrait
 {
     /**
      * @param string $string
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @return null
      */
     abstract protected function throwInvalidArgumentMustBe($string);
