@@ -1,13 +1,19 @@
 <?php
-namespace Webcore\Validation\Tests\Validation;
+namespace Webcore\Validation\Tests\Rules;
 
-use Webcore\Validation\Tests\ValidationTraitBaseTest;
+use Webcore\Validation\Rules\EmailTrait;
+use Webcore\Validation\Tests\SingleParamsTraitTest;
 
-class ValidationIpAddressTest extends ValidationTraitBaseTest
+class EmailTraitTest extends SingleParamsTraitTest
 {
+    protected function getTestTraitName()
+    {
+        return EmailTrait::class;
+    }
+
     protected function getTestMethodName()
     {
-        return "validateIpAddress";
+        return "validateEmail";
     }
 
     public function provideInvalidValues()
@@ -28,17 +34,20 @@ class ValidationIpAddressTest extends ValidationTraitBaseTest
             ["bG9yZW0="],
             ["MA=="],
             ["\n\n\n"],
+            ["0.0.0.0"],
+            ["255.255.255.255"],
+            ["192.168.0.1"],
+            ["2001:0db8:85a3:08d3:1319:8a2e:0370:7334"],
+            ["2001:0db8:85a3:08d3::"],
         ];
     }
 
     public function provideValidValues()
     {
         return [
-            ["0.0.0.0"],
-            ["255.255.255.255"],
-            ["192.168.0.1"],
-            ["2001:0db8:85a3:08d3:1319:8a2e:0370:7334"],
-            ["2001:0db8:85a3:08d3::"],
+            ["bob@example.com"],
+            ["john.doe@example.com"],
+            ["john.doe+example@example.com"],
         ];
     }
 }

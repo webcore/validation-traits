@@ -1,11 +1,14 @@
 <?php
 
-use Webcore\Validation\ValidationTrait;
-use Webcore\Validation\ValidationValueBoxTrait;
+use Webcore\Validation\Rules\Base64Trait;
+use Webcore\Validation\Rules\LengthTrait;
+use Webcore\Validation\Rules\NotEmptyTrait;
+use Webcore\Validation\SingleValueObjectInterface;
+use Webcore\Validation\SingleValueObjectTrait;
 
-class Token
+class Token implements SingleValueObjectInterface
 {
-    use ValidationTrait, ValidationValueBoxTrait;
+    use SingleValueObjectTrait, NotEmptyTrait, Base64Trait, LengthTrait;
 
     protected function validation($value)
     {

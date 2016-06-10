@@ -1,10 +1,16 @@
 <?php
-namespace Webcore\Validation\Tests\Validation;
+namespace Webcore\Validation\Tests\Rules;
 
-use Webcore\Validation\Tests\ValidationTraitBaseTest;
+use Webcore\Validation\Rules\Base64Trait;
+use Webcore\Validation\Tests\SingleParamsTraitTest;
 
-class ValidationBase64Test extends ValidationTraitBaseTest
+class Base64TraitTest extends SingleParamsTraitTest
 {
+    protected function getTestTraitName()
+    {
+        return Base64Trait::class;
+    }
+
     protected function getTestMethodName()
     {
         return "validateBase64";

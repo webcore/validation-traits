@@ -1,13 +1,19 @@
 <?php
-namespace Webcore\Validation\Tests\Validation;
+namespace Webcore\Validation\Tests\Rules;
 
-use Webcore\Validation\Tests\ValidationTraitBaseTest;
+use Webcore\Validation\Rules\UrlTrait;
+use Webcore\Validation\Tests\SingleParamsTraitTest;
 
-class ValidationEmailTest extends ValidationTraitBaseTest
+class UrlTraitTest extends SingleParamsTraitTest
 {
+    protected function getTestTraitName()
+    {
+        return UrlTrait::class;
+    }
+
     protected function getTestMethodName()
     {
-        return "validateEmail";
+        return "validateUrl";
     }
 
     public function provideInvalidValues()
@@ -39,9 +45,9 @@ class ValidationEmailTest extends ValidationTraitBaseTest
     public function provideValidValues()
     {
         return [
-            ["bob@example.com"],
-            ["john.doe@example.com"],
-            ["john.doe+example@example.com"],
+            ["https://www.google.sk"],
+            ["ftp://peter@example.com"],
+            ["http://example"],
         ];
     }
 }
