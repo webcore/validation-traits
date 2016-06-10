@@ -23,5 +23,14 @@
     },
     "autoload-dev": {
         "psr-4": { "Webcore\\Validation\\Tests\\": "tests/" }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --coverage-text",
+        "test-html": "vendor/bin/phpunit  --coverage-html coverage tests",
+        "test-ci": "vendor/bin/phpunit --coverage-clover=coverage.clover --coverage-text",
+        "upload-code-coverage": [
+            "wget https://scrutinizer-ci.com/ocular.phar",
+            "php ocular.phar code-coverage:upload --format=php-clover coverage.clover"
+        ]
     }
 }
